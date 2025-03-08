@@ -1,34 +1,23 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import Routes from './routes';
-import themes from './themes';
-import { SnackbarProvider } from 'notistack';
-import store from './store';
-import SocketProvider from './context/SocketContext';
+
 
 import './App.css';
+import NavBar from './pages/home/components/NavBar';
+import MainContent from './pages/home/components/MainContent/MainContent';
+import Benifits from './pages/home/components/Benifits/Benifits';
+import About from './pages/home/components/About/About';
+import Prices from './pages/home/components/Prices/Prices';
+import Footer from './pages/home/components/Footer/Footer';
+
 const App = () => {
   return (
     <>
-      <SnackbarProvider
-        maxSnack={3}
-        hideIconVariant
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-        preventDuplicate
-      >
-        <Provider store={store}>
-          <SocketProvider>
-            <CssBaseline />
-            <Routes />
-          </SocketProvider>
-        </Provider>
-      </SnackbarProvider>
-
+      <NavBar />
+      <MainContent />
+      <Benifits />
+      <About />
+      <Prices />
+      <Footer />
     </>
 
 
